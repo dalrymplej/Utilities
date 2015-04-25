@@ -14,8 +14,8 @@ import os
 
 # Download latest csv files for Envision, and save them to a local directory.
 
-#directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\altFiles\\"
-directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\altFiles\\"
+directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\altFiles\\"
+#directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\altFiles\\"
 version = '2015_04_17_BEE9823'
 
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/Extreme.zip')
