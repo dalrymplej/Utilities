@@ -11,7 +11,8 @@ from StringIO import StringIO
 
 # Download latest csv files for Envision, and save them to a local directory.
 
-directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\files\\"
+#directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\files\\"
+directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\files\\"
 
 response = urllib2.urlopen('http://envision.bioe.orst.edu/StudyAreas/WW2100/Outputs/Ref/Model_Outputs_Ref_Run0.zip')
 zipdata = response.read()
@@ -58,7 +59,7 @@ zipdata = response.read()
 with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
     
-response = urllib2.urlopen('http://envision.bioe.orst.edu/StudyAreas/WW2100/Outputs/Historic/Model_Outputs_Historic_Run0.zip')
-zipdata = response.read()
-with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-    z.extractall(directory_path)
+#response = urllib2.urlopen('http://envision.bioe.orst.edu/StudyAreas/WW2100/Outputs/Historic/Model_Outputs_Historic_Run0.zip')
+#zipdata = response.read()
+#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+#    z.extractall(directory_path)
