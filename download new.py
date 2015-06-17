@@ -13,7 +13,7 @@ from ftplib import FTP
 # Download latest csv files for Envision, and save them to a local directory.
 
 #directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\altFiles\\"
-directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
+directory_path = "C:\\code\\maplot data\\"
 version = '2015_06_05_CEOAS57'
 
 ftp = FTP('131.252.97.79')
@@ -111,7 +111,7 @@ for filen in filenames:
 #    z.extractall(directory_path)
 
 for dirname in os.listdir(directory_path):
-    if dirname[0] is not '_':
+    if dirname[0] is not '_' and "." not in dirname:
         for filename in os.listdir(directory_path+dirname):
             if filename[-4:]=='.csv' or filename[-5:]=='.xlsx' or filename[-4:]=='.txt':
                 source = directory_path+dirname+"\\"+filename
