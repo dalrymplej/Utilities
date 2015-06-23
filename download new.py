@@ -117,3 +117,5 @@ for dirname in os.listdir(directory_path):
                 source = directory_path+dirname+"\\"+filename
                 dest = directory_path+filename
                 shutil.move(source,dest)
+for filename in os.listdir(directory_path):
+    if filename[-4] == '.png': os.remove(directory_path+filename)
