@@ -5,8 +5,8 @@ script finds all csv files with name "HBV_Flows" and splits columns to individua
 import os
 import re
 import pandas as pd
-directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
-#directory_path = "C:\\Users\\haggertr\\Desktop\\test\\"
+#directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
+directory_path = "C:\\code\\data repository\\"
 #directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\files\\"
 scenarios_list = ['HighClim']
 basic_name = 'HBV_Flows_(m3_s)_Ref_Run0.csv'
