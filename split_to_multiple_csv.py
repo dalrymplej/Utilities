@@ -18,7 +18,7 @@ for filename in os.listdir(directory_path):
     if filename.startswith(searchname) and filename[-4:]=='.csv':
         match = re.search("(m3_s)", filename)  
         scenarios_list.append(filename[match.end()+2:-9])  # grabs part of name like 'HighClim' that comes after "(m3_s)"
-scenarios_list = ['NoReservoirs']
+#scenarios_list = ['NoReservoirs']
 # split the searchname file into its columns and make those individual csv files
 for scenario in scenarios_list:
     file_model_csv_w_path = directory_path + basic_name.replace('Ref', scenario)

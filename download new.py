@@ -12,8 +12,8 @@ from ftplib import FTP
 
 # Download latest csv files for Envision, and save them to a local directory.
 
-#directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\altFiles\\"
-directory_path = "C:\\code\\data repository\\"
+directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\files\\"
+#directory_path = "C:\\code\\data repository\\"
 version = 'WW2100_1.0'
 
 ftp = FTP('131.252.97.79')
