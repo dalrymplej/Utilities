@@ -14,16 +14,19 @@ from ftplib import FTP
 
 directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\files\\"
 #directory_path = "C:\\code\\data repository\\"
-version = 'WW2100_1.0'
+version = 'WW2100_2.2'
 
 ftp = FTP('131.252.97.79')
 ftp.login('anonymous')
 ftp.cwd('WW2100/OutputData/'+version+'/')
 filenames = ftp.nlst() # get filenames within the directory
-try:
-    filenames.remove('Ref_with_maps.zip')
-except ValueError:
-    pass
+# remove files that aren't zip'd csv files from filenames list
+to_be_deleted = [s for s in filenames if "maps.zip" in s]
+to_be_deleted2 = [s for s in filenames if ".xlsx" in s]
+to_be_deleted.extend(to_be_deleted2)
+filenames2 = [x for x in filenames if x not in to_be_deleted]
+filenames = filenames2
+print filenames, '/n'
 filenamescp = list(filenames)
 for filen in filenamescp:
     if filen[-4:] != '.zip': filenames.remove(filen)
