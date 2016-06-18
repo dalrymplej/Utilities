@@ -15,6 +15,7 @@ from ftplib import FTP
 directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\files\\"
 #directory_path = "C:\\code\\data repository\\"
 version = 'WW2100_2.2'
+#version = 'temporary/Ref_Jun14_v318'
 
 ftp = FTP('131.252.97.79')
 ftp.login('anonymous')
