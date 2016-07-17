@@ -1,4 +1,5 @@
 # Roy Haggerty, Jun 11 2015
+# minor updates Jul 17 2016
 """
 script finds all csv files with name "HBV_Flows" and splits columns to individual files
 """
@@ -26,7 +27,8 @@ for scenario in scenarios_list:
     new_file_list = list(df.columns.values)
     match = re.search("(m3_s)", file_model_csv_w_path)  
     file_name_end = file_model_csv_w_path[match.end()+1:-4]  # grabs part of name like '_HighClim_Run0' that comes after "(m3_s)"
-    for new_file in new_file_list[1:9]:
+    num_col = 9  # The 9th column is currently the Willamette_at_Portland, but there are other columns to the right that could be converted into csv files.  E.g., Blue River
+    for new_file in new_file_list[1:num_col]:    
         new_file2 = new_file.replace('/','_')
         new_file_name = directory_path + new_file2[1:].replace(' ','_') + file_name_end + '.csv'
         columns = [new_file]
