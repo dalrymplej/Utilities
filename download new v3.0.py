@@ -16,7 +16,10 @@ import os
 # Download latest csv files for Envision, and save them to a local directory.
 
 #directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\altFiles\\"
-directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
+#directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
+
+# jd20160720: in Python shell or IDE, cd to the folder where we want the data to go, then run this script
+directory_path = os.getcwd() + '\\'
 version = 'WW2100_3.0'
 
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/AllFallow.zip')
@@ -24,10 +27,10 @@ zipdata = response.read()
 with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
     
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/Extreme.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/Extreme.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
     
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/EconExtreme.zip')
 zipdata = response.read()
@@ -39,10 +42,10 @@ zipdata = response.read()
 with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
     
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/FullCostUrb.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/FullCostUrb.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
     
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/HighClim.zip')
 zipdata = response.read()
@@ -59,20 +62,20 @@ zipdata = response.read()
 with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
 
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/HistoricHadGEM.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/HistoricHadGEM.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
     
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/HistoricRef.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/HistoricRef.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
     
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/LateRefill.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/LateRefill.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
     
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/LowClim.zip')
 zipdata = response.read()
@@ -104,10 +107,10 @@ zipdata = response.read()
 with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
 
-#response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/NoIncGrowth.zip')
-#zipdata = response.read()
-#with zipfile.ZipFile(StringIO(zipdata), "r") as z:
-#    z.extractall(directory_path)
+response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/NoIncGrowth.zip')
+zipdata = response.read()
+with zipfile.ZipFile(StringIO(zipdata), "r") as z:
+    z.extractall(directory_path)
 
 response = urllib2.urlopen('ftp://131.252.97.79/WW2100/OutputData/'+version+'/NoPopGrowth.zip')
 zipdata = response.read()
@@ -135,7 +138,7 @@ with zipfile.ZipFile(StringIO(zipdata), "r") as z:
     z.extractall(directory_path)
 
 for dirname in os.listdir(directory_path):
-    if dirname[0] is not '_':
+    if dirname[0] is not '_' and '.' not in dirname :
         for filename in os.listdir(directory_path+dirname):
             if filename[-4:]=='.csv' or filename[-5:]=='.xlsx' or filename[-4:]=='.txt':
                 source = directory_path+dirname+"\\"+filename

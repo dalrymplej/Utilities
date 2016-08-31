@@ -6,9 +6,13 @@ script finds all csv files with name "HBV_Flows" and splits columns to individua
 import os
 import re
 import pandas as pd
-directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
+#directory_path = "C:\\Users\\haggertr\\Desktop\\Roy\\Research\\WW2100\\Research\\results2\\Files\\"
 #directory_path = "C:\\code\\data repository\\"
 #directory_path = "C:\\Users\\haggertr\\Desktop\\Documents\\work - OSU\\research\\WW2100\\Research\\results2\\files\\"
+
+# Must cd to data directory in Python shell or IDE before running this script
+directory_path = os.getcwd() + '\\'
+
 basic_name = 'HBV_Flows_(m3_s)_Ref_Run0.csv'
 
 # Find all scenarios with searchname ending with 'csv'
